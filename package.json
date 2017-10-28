@@ -1,15 +1,15 @@
 {
-    "name": "vp-atom-theme-syntax",
-    "theme": "syntax",
-    "version": "0.0.0",
-    "description": "Vp Syntax Theme for Atom",
-    "keywords": [
-        "syntax",
-        "theme"
-    ],
-    "repository": "https://github.com/vicpi/vp-atom-theme-syntax",
-    "license": "MIT",
-    "engines": {
-        "atom": ">=1.0.0 <2.0.0"
-    }
+  "name": "vp-atom-theme-syntax",
+  "theme": "syntax",
+  "version": "0.1.0",
+  "description": "Vp Syntax Theme for Atom",
+  "keywords": [
+    "syntax",
+    "theme"
+  ],
+  "repository": "https://github.com/vicpi/vp-atom-theme-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
 }
