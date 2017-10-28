@@ -1,0 +1,305 @@
+@import "syntax-variables";
+
+atom-text-editor {
+    background-color: @syntax-background-color;
+    color: @text;
+
+    .wrap-guide {
+        background-color: @syntax-wrap-guide-color;
+    }
+
+    .indent-guide {
+        color: @syntax-indent-guide-color;
+    }
+
+    .invisible-character {
+        color: @syntax-invisible-character-color;
+    }
+
+    .gutter {
+        background-color: @syntax-gutter-background-color;
+        color: @syntax-gutter-text-color;
+
+        .line-number {
+            &.cursor-line {
+                background-color: @syntax-gutter-background-color-selected;
+                color: @syntax-gutter-text-color-selected;
+            }
+
+            &.cursor-line-no-selection {
+                color: @syntax-gutter-text-color-selected;
+            }
+        }
+    }
+
+    .fold-marker:after,
+    .gutter .line-number.folded,
+    .gutter .line-number:after {
+        color: @light-gray;
+    }
+
+    .invisible {
+        color: @syntax-text-color;
+    }
+
+    .cursor {
+        color: @syntax-cursor-color;
+    }
+
+    .selection .region {
+        background-color: @syntax-selection-color;
+    }
+}
+
+.syntax--source.syntax--gfm .syntax--markup {
+    -webkit-font-smoothing: auto;
+
+    &.syntax--heading {
+        color: @green;
+    }
+}
+// Syntax styles
+
+.syntax--comment {
+    color: @light-gray;
+}
+
+.syntax--js {
+    // this
+    &.syntax--language.syntax--variable {
+        color: @this;
+    }
+
+    &.syntax--string {
+        color: @string;
+        &.syntax--template {
+            color: @string;
+            .syntax--definition {
+                color: @string;
+            }
+        }
+    }
+
+    &.syntax--variable.syntax--default {
+        color: @keyword;
+    }
+
+    &.syntax--keyword {
+        color: @keyword;
+    }
+
+    &.syntax--keyword.syntax--operator.syntax--new {
+        color: @keyword;
+    }
+
+    &.syntax--punctuation.syntax--curly.syntax--bracket {
+        color: @js-curly-brace;
+    }
+
+    &.syntax--storage {
+        color: @keyword;
+    }
+
+    &.syntax--keyword.syntax--operator.syntax--of {
+        color: @keyword;
+    }
+
+    &.syntax--meta.syntax--function {
+        > .syntax--function.syntax--type {
+            color: @function-definition;
+        }
+        > .syntax--function.syntax--name {
+            color: @function-definition-name;
+        }
+
+        .syntax--parameters.syntax--punctuation {
+            .syntax--brace.syntax--round {
+                color: @function-definition-brace;
+            }
+        }
+    }
+
+    &.syntax--meta.syntax--function-call {
+        > .syntax--function.syntax--name {
+            color: @function-invocation;
+        }
+    }
+
+    &.syntax--meta.syntax--method-call {
+        > .syntax--function.syntax--name {
+            color: @js-object-method;
+        }
+    }
+
+    &.syntax--type.syntax--function.syntax--arrow {
+        color: @function-arrow;
+    }
+
+    &.syntax--variable.syntax--parameter {
+        color: @parameter;
+    }
+
+    &.syntax--keyword.syntax--operator.syntax--typeof {
+        color: @keyword;
+    }
+
+    &.syntax--keyword.syntax--operator {
+        color: @operator;
+    }
+
+    &.syntax--object.syntax--key {
+        .syntax--string {
+            color: @js-object-key;
+        }
+    }
+
+    &.syntax--brace.syntax--curly {
+        color: @js-curly-brace;
+    }
+
+    &.syntax--brace.syntax--square {
+        color: @js-square-brace;
+    }
+
+    &.syntax--brace.syntax--round {
+        color: @js-round-brace;
+    }
+
+    &.syntax--variable.syntax--object {
+        color: @js-object;
+    }
+
+    &.syntax--variable {
+        color: @variable;
+        &.syntax--other.syntax--readwrite {
+            color: @js-variable;
+        }
+
+        &.syntax--other.syntax--object {
+            color: @js-variable;
+        }
+    }
+
+    &.syntax--variable.syntax--property {
+        color: @js-object-property;
+    }
+
+    &.syntax--quasi {
+        color: @js-quasi;
+
+        &.syntax--begin {
+            color: @js-quasi-edge;
+        }
+
+        &.syntax--end {
+            color: @js-quasi-edge;
+        }
+    }
+}
+
+&.syntax--jsx {
+    .syntax--tag {
+        &.syntax--name {
+            color: @jsx-tag-name;
+        }
+        &.syntax--definition.syntax--punctuation {
+            color: @jsx-tag-bracket;
+        }
+        .syntax--attribute-name {
+            color: @jsx-attribute-name;
+        }
+    }
+    .syntax--section.syntax--embedded.syntax--punctuation {
+        color: @jsx-embedded-section;
+    }
+}
+
+.syntax--type.syntax--flowtype.syntax--support {
+    color: @flow-type;
+}
+
+.syntax--flowtype.syntax--keyword {
+    color: @flow-keyword;
+}
+
+.syntax--flowtype {
+    .syntax--js.syntax--variable.syntax--readwrite {
+        color: @text;
+    }
+}
+
+.syntax--css {
+    &.syntax--attribute-name {
+        color: @css-selector;
+    }
+
+    &.syntax--property-name {
+        color: @css-property;
+    }
+
+    &.syntax--property-value {
+        color: @text;
+    }
+}
+
+.syntax--scss {
+    &.syntax--keyword {
+        color: @scss-keyword;
+    }
+
+    &.syntax--reference {
+        color: @css-selector;
+    }
+
+    &.syntax--meta.syntax--property-list {
+        > .syntax--variable {
+            color: @css-selector;
+        }
+    }
+
+    &.syntax--variable {
+        color: @scss-variable;
+    }
+}
+
+.syntax--json {
+    &.syntax--key.syntax--meta .syntax--string {
+        color: @json-key;
+    }
+
+    &.syntax--string {
+        color: @json-value;
+    }
+}
+
+.syntax--makefile {
+    .syntax--function.syntax--name {
+        color: @makefile-target;
+    }
+
+    .syntax--variable {
+        color: @makefile-variable;
+    }
+
+}
+
+.outline-view {
+    .syntax--keyword {
+        color: @blue;
+    }
+
+    .outline-view-item {
+        > .syntax--function ~ span {
+            display: none;
+        }
+    }
+}
+// Mini editor
+
+atom-text-editor[mini] .scroll-view {
+    padding-left: 1px;
+}
+
+atom-overlay {
+    background-color: #333;
+}
