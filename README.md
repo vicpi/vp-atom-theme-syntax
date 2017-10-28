@@ -20,6 +20,8 @@ Please install it first.
 
 * JavaScript
 * React JSX
+* Flow
+* JSON
 * CSS
 * SCSS
 
