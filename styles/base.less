@@ -51,6 +51,10 @@ atom-text-editor {
     }
 }
 
+.atom-ternjs-type {
+    display: none;
+}
+
 .syntax--source.syntax--gfm .syntax--markup {
     -webkit-font-smoothing: auto;
 
@@ -92,12 +96,19 @@ atom-text-editor {
         color: @keyword;
     }
 
+    &.syntax--keyword.syntax--operator.syntax--delete {
+        color: @keyword;
+    }
+
     &.syntax--punctuation.syntax--curly.syntax--bracket {
         color: @js-curly-brace;
     }
 
     &.syntax--storage {
         color: @keyword;
+        &.syntax--function {
+            color: @text;
+        }
     }
 
     &.syntax--keyword.syntax--operator.syntax--of {
@@ -170,7 +181,7 @@ atom-text-editor {
     }
 
     &.syntax--variable {
-        color: @variable;
+        color: @js-variable;
         &.syntax--other.syntax--readwrite {
             color: @js-variable;
         }
@@ -195,6 +206,10 @@ atom-text-editor {
             color: @js-quasi-edge;
         }
     }
+
+    &.syntax--generator.syntax--asterisk {
+        color: @js-generator;
+    }
 }
 
 &.syntax--jsx {
@@ -207,6 +222,7 @@ atom-text-editor {
         }
         .syntax--attribute-name {
             color: @jsx-attribute-name;
+            font-style: normal !important;
         }
     }
     .syntax--section.syntax--embedded.syntax--punctuation {
